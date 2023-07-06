@@ -26,4 +26,7 @@ How to use BLUPF90?
     chmod 777 <filename>
 8.	To run your program type ./nameofprogram in your terminal window.
 9. After downloading Julia, add it to path (mac or linux)
-```sudo ln -s /Users/yebi/Library/CloudStorage/OneDrive-VirginiaTech/Courses/Geogia_workshop/blupf90_dir/blupf90+ /usr/local/bin/blupf90+```
+
+```
+sudo ln -s /Users/yebi/Library/CloudStorage/OneDrive-VirginiaTech/Courses/Geogia_workshop/blupf90_dir/blupf90+ /usr/local/bin/blupf90+
+```
