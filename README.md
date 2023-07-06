@@ -13,8 +13,8 @@ How to use BLUPF90?
 -	postGSf90
 -	predf90
 3.	Put these programs in your Workshop folder.
-4.	To make your program executable open a terminal window (it will open in your browser)
-    chmod 777 <filename>
+4.	To make your program executable open a terminal window
+    ```chmod 777 <filename>```
 5.	To run your program type ./nameofprogram in your terminal window.
 
 ## In Mac_OS system:
@@ -23,7 +23,7 @@ How to use BLUPF90?
 
 6.	Put these programs in your Workshop folder.
 7.	To make your program executable open a terminal window                                    
-    chmod 777 <filename>
+    ```chmod 777 <filename>```
 8.	To run your program type ./nameofprogram in your terminal window.
 9. After downloading Julia, add it to path (mac or linux)
 
