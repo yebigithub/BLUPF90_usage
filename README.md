@@ -28,5 +28,5 @@ How to use BLUPF90?
 9. After downloading Julia, add it to path (mac or linux)
 
 ```
-sudo ln -s /Users/yebi/Library/CloudStorage/OneDrive-VirginiaTech/Courses/Geogia_workshop/blupf90_dir/blupf90+ /usr/local/bin/blupf90+
+sudo ln -s /YOUR/DIR/PATH/blupf90+ /usr/local/bin/blupf90+
 ```
