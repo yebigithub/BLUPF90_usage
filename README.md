@@ -18,7 +18,9 @@ How to use BLUPF90?
 5.	To run your program type ./nameofprogram in your terminal window.
 
 ## In Mac_OS system:
-Download the programs from here: http://nce.ads.uga.edu/html/projects/programs/Mac_OSX/64bit/ 
+
+- Download the programs from here: http://nce.ads.uga.edu/html/projects/programs/Mac_OSX/64bit/
+
 6.	Put these programs in your Workshop folder.
 7.	To make your program executable open a terminal window                                    
     chmod 777 <filename>
