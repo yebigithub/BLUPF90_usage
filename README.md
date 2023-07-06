@@ -13,7 +13,7 @@ How to use BLUPF90?
 -	postGSf90
 -	predf90
 3.	Put these programs in your Workshop folder.
-4.	To make your program executable open a terminal window
+4.	To make your program executable open a terminal window    
     ```chmod 777 <filename>```
 5.	To run your program type ./nameofprogram in your terminal window.
 
