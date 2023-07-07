@@ -11,4 +11,5 @@ BLUPF90 wiki. http://nce.ads.uga.edu/wiki/doku.php#headline
 2.	Put these programs in your Workshop folder. Such as ``` ~/bin ```
 3.	To make your program executable open a terminal window                                    
     ```chmod 777 <filename>```
-4.  After downloading and executing, add them to your path (mac or linux). ```export PATH=~/bin:$PATH```
+4.  After downloading and executing, add them to your path (mac or linux). ```export PATH=~/bin:$PATH```  
+To execute this command on log-in everytime, set the variable in ```~/.bash_profile```.
