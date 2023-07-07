@@ -26,7 +26,13 @@ How to use BLUPF90?
     ```chmod 777 <filename>```
 4.	To run your program type ./nameofprogram in your terminal window.
 5. After downloading Julia, add it to path (mac or linux)
-
 ```
-sudo ln -s /YOUR/DIR/PATH/blupf90+ /usr/local/bin/blupf90+
+# 1. make a directory for binaries if you don't have it.
+mkdir ~/bin
+
+# 2. move the program to the directory.
+mv blupf90 ~/bin
+
+# 3. add to PATH 
+export PATH=~/bin:$PATH
 ```
