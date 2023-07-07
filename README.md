@@ -1,6 +1,6 @@
 # BLUPF90_usage
 How to use BLUPF90 To fit random regression model for genomic prediction and GWAS? 
-
+ttt
 More details from official website. https://masuday.github.io/blupf90_tutorial/index.html
 BLUPF90 wiki. http://nce.ads.uga.edu/wiki/doku.php#headline
 
