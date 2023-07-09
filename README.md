@@ -25,14 +25,14 @@ To execute this command on log-in everytime, set the variable in ```~/.bash_prof
 
 ## Variance Component Estimation
 ### General
-['aireml1.txt'](https://github.com/yebigithub/BLUPF90_usage/blob/main/VCE/github_vce/aireml1.txt) is parameter file containing default initial variances and OPTION, we will use it in blupf90+ to get the estimated variances.
+['aireml1.txt'](https://github.com/yebigithub/BLUPF90_usage/blob/main/VCE/general/aireml1.txt) is parameter file containing default initial variances and OPTION, we will use it in blupf90+ to get the estimated variances.
 
 In terminal, run:
 ```
 blupf90+ aireml1.txt
 ```
 
-From the generated file 'blupf90.log', copy residual variance, and genetic effect variance into ['aireml1_1.txt'](https://github.com/yebigithub/BLUPF90_usage/blob/main/VCE/github_vce/aireml1_1.txt). Then run the following code, we can get the sulotions.
+From the generated file 'blupf90.log', copy residual variance, and genetic effect variance into ['aireml1_1.txt'](https://github.com/yebigithub/BLUPF90_usage/blob/main/VCE/general/aireml1_1.txt). Then run the following code, we can get the sulotions.
 ```
 blupf90+ aireml1_1.txt 
 ```
