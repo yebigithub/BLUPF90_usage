@@ -20,10 +20,10 @@ To execute this command on log-in everytime, set the variable in ```~/.bash_prof
 
 In terminal, run:
 ```
-renumf90 aireml1.txt 
+blupf90+ aireml1.txt
 ```
 
 From the generated file 'blupf90.log', copy residual variance, and genetic effect variance into ['aireml1_1.txt'](https://github.com/yebigithub/BLUPF90_usage/blob/main/VCE/github_vce/aireml1_1.txt). Then run the following code, we can get the sulotions.
 ```
-renumf90 aireml1_1.txt 
+blupf90+ aireml1_1.txt 
 ```
