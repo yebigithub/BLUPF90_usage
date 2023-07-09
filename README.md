@@ -5,10 +5,13 @@
 More details from official website. 
 - GitHub tutorial. https://masuday.github.io/blupf90_tutorial/index.html
 - BLUPF90 wiki. http://nce.ads.uga.edu/wiki/doku.php
+    - Random regression model: https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
+    - GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html 
 
 ## Similar paper about RRM
 - Github link: https://github.com/Rostamabd/Random-Regression-Analysis/tree/master
-## In Mac_OS system:
+
+## Install in Mac_OS system:
 
 1.  Download the programs from here: http://nce.ads.uga.edu/html/projects/programs/Mac_OSX/64bit/
 2.	Put these programs in your Workshop folder. Such as ``` ~/bin ```
