@@ -24,4 +24,4 @@ simped.txt
 (CO)VARIANCES
 100
 
-#OPTION method VCE
+OPTION method VCE
