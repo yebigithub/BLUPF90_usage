@@ -35,3 +35,16 @@ From the generated file 'blupf90.log', copy residual variance, and genetic effec
 ```
 blupf90+ aireml1_1.txt 
 ```
+
+## RENUM90
+Use this to get SNP-refID.txt
+
+## PREGSF90
+Use this to get G inverse.
+
+## GBLUP
+Good to learn. see folder GBLUP.
+
+## RRM
+
+## GWAS
