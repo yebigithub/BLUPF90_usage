@@ -7,6 +7,7 @@ More details from official website.
 - GitHub tutorial. https://masuday.github.io/blupf90_tutorial/index.html
     Related pages.
     - Restricted (residual) maximum likelihood with AIREMLF90: https://masuday.github.io/blupf90_tutorial/vc_aireml.html
+    - GBLUP: https://masuday.github.io/blupf90_tutorial/mrode_c11ex113_gblup.html
     - Random regression model: https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
     - GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html 
 
