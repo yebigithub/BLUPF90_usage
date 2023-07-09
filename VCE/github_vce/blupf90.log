@@ -1,0 +1,18 @@
+ BLUPF90+ ver. 2.49
+ In round          8 convergence =  0.347648683209E-14
+ delta convergence =  0.183577747008E-05
+-2logL =        33423.451     : AIC =        33427.451    
+Genetic variance(s) for effect  4       
+   38.538    
+Residual variance(s)
+   62.691    
+inverse of AI matrix (Sampling Variance)
+   13.471      -6.7551    
+  -6.7551       6.5499    
+Correlations from inverse of AI matrix
+   1.0000     -0.71914    
+ -0.71914       1.0000    
+SE for G
+   3.6703    
+SE for R
+   2.5593    
