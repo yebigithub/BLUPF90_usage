@@ -6,6 +6,8 @@ More details from official website.
 - GitHub tutorial. https://masuday.github.io/blupf90_tutorial/index.html
 - BLUPF90 wiki. http://nce.ads.uga.edu/wiki/doku.php
 
+## Similar paper about RRM
+- Github link: https://github.com/Rostamabd/Random-Regression-Analysis/tree/master
 ## In Mac_OS system:
 
 1.  Download the programs from here: http://nce.ads.uga.edu/html/projects/programs/Mac_OSX/64bit/
