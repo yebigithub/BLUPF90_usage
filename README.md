@@ -24,6 +24,7 @@ More details from official website.
 To execute this command on log-in everytime, set the variable in ```~/.bash_profile```.
 
 ## Variance Component Estimation
+### General
 ['aireml1.txt'](https://github.com/yebigithub/BLUPF90_usage/blob/main/VCE/github_vce/aireml1.txt) is parameter file containing default initial variances and OPTION, we will use it in blupf90+ to get the estimated variances.
 
 In terminal, run:
@@ -35,6 +36,9 @@ From the generated file 'blupf90.log', copy residual variance, and genetic effec
 ```
 blupf90+ aireml1_1.txt 
 ```
+### For GBLUP specificly
+
+### For RRM specificly
 
 ## RENUM90
 Use this to get SNP-refID.txt
