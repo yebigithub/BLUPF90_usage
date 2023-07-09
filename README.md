@@ -23,6 +23,25 @@ More details from official website.
 4.  After downloading and executing, add them to your path (mac or linux). ```export PATH=~/bin:$PATH```  
 To execute this command on log-in everytime, set the variable in ```~/.bash_profile```.
 
+
+## GBLUP
+### RENUM90
+Use this to get SNP-refID.txt
+
+### PREGSF90
+Use this to get G inverse.
+
+### GBLUP
+Good to learn. see folder GBLUP.
+
+
+
+## RRM
+
+## GWAS
+
+
+# Appendix---- good practise for beginners.
 ## Variance Component Estimation
 ### General
 ['aireml1.txt'](https://github.com/yebigithub/BLUPF90_usage/blob/main/VCE/general/aireml1.txt) is parameter file containing default initial variances and OPTION, we will use it in blupf90+ to get the estimated variances.
@@ -36,19 +55,3 @@ From the generated file 'blupf90.log', copy residual variance, and genetic effec
 ```
 blupf90+ aireml1_1.txt 
 ```
-### For GBLUP specificly
-
-### For RRM specificly
-
-## RENUM90
-Use this to get SNP-refID.txt
-
-## PREGSF90
-Use this to get G inverse.
-
-## GBLUP
-Good to learn. see folder GBLUP.
-
-## RRM
-
-## GWAS
