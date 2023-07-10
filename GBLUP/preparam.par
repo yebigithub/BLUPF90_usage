@@ -1,0 +1,33 @@
+# 
+# Approach 1: creates a text G - Inverse file with PREGSF90
+#
+DATAFILE
+ renf90.dat
+NUMBER_OF_TRAITS
+           1
+NUMBER_OF_EFFECTS
+           2
+OBSERVATION(S)
+    1
+WEIGHT(S)
+ 
+EFFECTS: POSITIONS_IN_DATAFILE NUMBER_OF_LEVELS TYPE_OF_EFFECT[EFFECT NESTED]
+ 2         1 cross 
+ 3        15 cross 
+RANDOM_RESIDUAL VALUES
+   1.0557    
+ RANDOM_GROUP
+     2
+ RANDOM_TYPE
+ add_an_upginb
+ FILE
+renadd02.ped                                                                    
+(CO)VARIANCES
+  0.52329E-05    
+OPTION SNP_file snp6.txt snp6.txt_XrefID   #add XrefID file.
+OPTION no_quality_control
+OPTION AlphaBeta 0.95 0.05                     #since no G-Inverse, let us use alphabeta.
+OPTION tunedG 0
+OPTION saveGInverse
+OPTION createGimA22i 0
+

@@ -1,0 +1,4 @@
+field     variable  origfield     group    column random    effect     file
+    1        trait          3         0         0 *         cov        *
+    2   renumbered          2         1         1 *         cross      *                                                                               
+    3   renumbered          1         2         1 animal    cross      renadd02.ped                                                                    

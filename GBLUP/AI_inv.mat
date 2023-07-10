@@ -1,0 +1,8 @@
+inverse of AI matrix (Sampling Variance)
+  0.66149E-07 -0.40803E-07
+ -0.40803E-07  0.22292    
+Correlations from inverse of AI matrix
+   1.0000     -0.33601E-03
+ -0.33601E-03   1.0000    
+SE for G
+  0.25719E-03

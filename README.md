@@ -26,18 +26,47 @@ To execute this command on log-in everytime, set the variable in ```~/.bash_prof
 
 ## GBLUP
 Theory and codes: https://masuday.github.io/blupf90_tutorial/mrode_c11ex113_gblup.html  
-Data: https://github.com/masuday/data
+Data: I didn't find the rawdata in the website above, so I used rawdata6 from ssGBLUP. Including "rawdata6.txt", "snp6.txt", "rawpedegree.txt". 
 
+steps:
+    - RENUM90 to generate snp6.txt_XrefID
+    - BLUPF90+ to generate variance components. 
+    - PREGSF90 to generate G inverse.
+    - BLUPF90+ to run GBLUP.
 ### RENUM90
-Use this to get SNP-refID.txt
+- Type in all related information into renum6.txt
+- In terminal, run ```renumf90 renum6.txt```.
+- After that you can get the 'snp6.txt_XrefID' in the same folder.  
+- 'renf90.par' is what we need in next step.
+
+### BLUP90+ to get VCE
+- In the last line of 'renf90.par' add the following line to get variance components.
+```
+OPTION method VCE
+```
+- In terminal, run ```blupf90+ renf90.par```
+- 'blupf90.log' is the file we need for next step.
 
 
 ### PREGSF90
-Use this to get G inverse.
+- Copy paste 'renf90.par' and rename into 'preparam.par'
+- From blupf90.log, extract the residual variance, and effect variance, and type them into 'preparam.par'. 
+- In the last part of preparam.par, add the following lines:
+```
+OPTION SNP_file snp6.txt snp6.txt_XrefID   #add XrefID file.
+OPTION no_quality_control
+OPTION AlphaBeta 0.95 0.05                     #since no G-Inverse, let us use alphabeta.
+OPTION tunedG 0
+OPTION saveGInverse
+OPTION createGimA22i 0
+```
+- In terminal, run ```preGSf90 preparam.par ```
 
 ### GBLUP
-Good to learn. see folder GBLUP.
-
+- Copy paste 'preparam.par' and rename into 'gblup.par'
+- Delete all the OPTIONs and add the following one. ```OPTION solv_method FSPAK```
+- In terminal, run ```blupf90+ gblup.par```
+- 'solutions' is what we want. The number information is showing in snp6.txt_XrefID.
 
 
 ## RRM

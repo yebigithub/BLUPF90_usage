@@ -1,0 +1,26 @@
+# file for gblup.
+DATAFILE
+ renf90.dat
+NUMBER_OF_TRAITS
+           1
+NUMBER_OF_EFFECTS
+           2
+OBSERVATION(S)
+    1
+WEIGHT(S)
+ 
+EFFECTS: POSITIONS_IN_DATAFILE NUMBER_OF_LEVELS TYPE_OF_EFFECT[EFFECT NESTED]
+ 2         1 cross 
+ 3        15 cross 
+RANDOM_RESIDUAL VALUES
+   1.0557    
+RANDOM_GROUP
+     2
+RANDOM_TYPE
+user_file
+FILE
+Gi
+(CO)VARIANCES
+  0.52329E-05    
+OPTION solv_method FSPAK
+
