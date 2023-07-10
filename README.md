@@ -100,10 +100,10 @@ FILE
 https://masuday.github.io/blupf90_tutorial/genomic_gwas.html
 
 
-# Appendix---- good practise for beginners. 
+# Appendix ---- good practise for beginners. 
 I am also a beginner..🤪🥸（所谓“现学现卖”）
 ## Variance Component Estimation
-### General
+***In real data analysis, it is better to estimate variance components with reml (AI-REML or EM-REML) firstly***
 ['aireml1.txt'](https://github.com/yebigithub/BLUPF90_usage/blob/main/VCE/general/aireml1.txt) is parameter file containing default initial variances and OPTION, we will use it in blupf90+ to get the estimated variances.
 
 In terminal, run:
