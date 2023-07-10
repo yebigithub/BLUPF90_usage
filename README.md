@@ -25,14 +25,16 @@ To execute this command on log-in everytime, set the variable in ```~/.bash_prof
 
 
 ## GBLUP
-Theory and codes: https://masuday.github.io/blupf90_tutorial/mrode_c11ex113_gblup.html  
-Data: I didn't find the rawdata in the website above, so I used rawdata6 from ssGBLUP. Including "rawdata6.txt", "snp6.txt", "rawpedegree.txt". 
+- Materials:
+    - Theory and codes: https://masuday.github.io/blupf90_tutorial/mrode_c11ex113_gblup.html  
+    - Data: I didn't find the rawdata in the website above, so I used rawdata6 from ssGBLUP. Including "rawdata6.txt", "snp6.txt", "rawpedegree.txt". 
 
-steps:
+- steps:
     - RENUM90 to generate snp6.txt_XrefID
     - BLUPF90+ to generate variance components. 
     - PREGSF90 to generate G inverse.
     - BLUPF90+ to run GBLUP.
+
 ### RENUM90
 - Type in all related information into renum6.txt
 - In terminal, run ```renumf90 renum6.txt```.
