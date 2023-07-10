@@ -27,7 +27,8 @@ To execute this command on log-in everytime, set the variable in ```~/.bash_prof
 ## GBLUP
 - Materials:
     - Theory and codes: https://masuday.github.io/blupf90_tutorial/mrode_c11ex113_gblup.html  
-    - Data: I didn't find the rawdata in the website above, so I used rawdata6 from ssGBLUP. Including "rawdata6.txt", "snp6.txt", "rawpedegree.txt". 
+    - Data: I didn't find the rawdata in the website above, so I used rawdata6 from ssGBLUP. Including ```rawdata6.txt```, ```snp6.txt```, ```rawpedegree.txt```. 
+    - All the raw files and generated files are in this [GBLUP folder](https://github.com/yebigithub/BLUPF90_usage/tree/main/GBLUP)
 
 - Main steps:
     - RENUM90 to generate snp6.txt_XrefID
