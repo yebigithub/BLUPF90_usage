@@ -96,7 +96,7 @@ FILE
 -0.254  3.171  0.167
 -1.101  0.167  2.457
 ```
-# GWAS to get p-val for markers.
+# GWAS to get p-val of all the markers.
 https://masuday.github.io/blupf90_tutorial/genomic_gwas.html
 
 
