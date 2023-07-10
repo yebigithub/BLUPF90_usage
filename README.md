@@ -70,7 +70,6 @@ OPTION createGimA22i 0
 - In terminal, run ```blupf90+ gblup.par```
 - ```solutions``` is what we want. The number information is showing in ```snp6.txt_XrefID```.
 
-
 ## RRM
 
 ## GWAS
