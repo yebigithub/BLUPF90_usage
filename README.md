@@ -102,6 +102,7 @@ PreGSF90 / PostGSF90: http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90
 ```
 OPTION snp_p_value
 ```
+notes: for RRM-GWAS, I need some time to think...
 
 # Appendix ---- good practise for beginners. 
 I am also a beginner..🤪🥸（所谓“现学现卖”）
