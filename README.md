@@ -97,7 +97,7 @@ FILE
 -1.101  0.167  2.457
 ```
 # GWAS to get p-val of all the markers.
-https://masuday.github.io/blupf90_tutorial/genomic_gwas.html
+GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html
 
 
 # Appendix ---- good practise for beginners. 
