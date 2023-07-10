@@ -11,7 +11,7 @@ More details from official website.
     - Random regression model: https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
     - GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html 
 
-# Similar paper about RRM
+***Similar paper about RRM***
 - Github link: https://github.com/Rostamabd/Random-Regression-Analysis/tree/master
 
 # Install in Mac_OS system:
