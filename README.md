@@ -71,6 +71,13 @@ OPTION createGimA22i 0
 - ```solutions``` is what we want. The number information is showing in ```snp6.txt_XrefID```.
 
 ## RRM
+Read this page, summarized very well.  
+https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
+
+**Main steps**
+- renum: Since the rawdata and rawpedigree data are just numbers, so there is no step about renum. In real dataset, you may need renum firstly.
+- VCE: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
+- BLUPF90+ to run RRM.
 
 ## GWAS
 
