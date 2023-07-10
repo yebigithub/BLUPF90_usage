@@ -12,7 +12,7 @@
     - GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html 
 
 ***Similar paper about RRM***
-- Github link: https://github.com/Rostamabd/Random-Regression-Analysis/tree/master
+- Github link: https://github.com/Rostamabd/Random-Regression-Analysis/blob/master/renf90.par
 
 # Install in Mac_OS system:
 
@@ -75,6 +75,7 @@ Read this tutorial page, summarized very well.
 https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
 
 **Main steps**
+- Column bind your phenotype data and legender polynomial matrix (Phi) together as input data file.
 - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renum firstly.
 - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
 - RRM: BLUPF90+ to run random regression model.
@@ -96,7 +97,7 @@ FILE
 -1.101  0.167  2.457
 ```
 # GWAS to get p-val for markers.
-
+https://masuday.github.io/blupf90_tutorial/genomic_gwas.html
 
 
 # Appendix---- good practise for beginners. 
