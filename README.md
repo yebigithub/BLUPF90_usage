@@ -36,13 +36,13 @@ To execute this command on log-in everytime, set the variable in ```~/.bash_prof
 - PREGSF90 to generate G inverse.  
 - BLUPF90+ to run GBLUP.  
 
-#### RENUM90
+### RENUM90
 - Type in all related information into renum6.txt
 - In terminal, run ```renumf90 renum6.txt```.
 - After that you can get the ```snp6.txt_XrefID``` in the same folder.  
 - ```renf90.par``` is what we need in next step.
 
-#### BLUP90+ to get variance components
+### BLUP90+ to get variance components
 - In the last line of ```renf90.par``` add the following line to get variance components.
 ```
 OPTION method VCE
@@ -50,7 +50,7 @@ OPTION method VCE
 - In terminal, run ```blupf90+ renf90.par```
 - ```blupf90.log``` is the file we need for next step.
 
-#### PREGSF90
+### PREGSF90
 - Copy paste ```renf90.par``` and rename into ```preparam.par```
 - From ```blupf90.log```, extract the residual variance, and effect variance, and type them into ```preparam.par```. 
 - In the last part of preparam.par, add the following lines:
@@ -64,7 +64,7 @@ OPTION createGimA22i 0
 ```
 - In terminal, run ```preGSf90 preparam.par ```
 
-#### GBLUP
+### GBLUP
 - Copy paste ```preparam.par``` and rename into ```gblup.par```
 - Delete all the OPTIONs and add the following one. ```OPTION solv_method FSPAK```
 - In terminal, run ```blupf90+ gblup.par```
