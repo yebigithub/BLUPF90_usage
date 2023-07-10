@@ -78,7 +78,7 @@ OPTION createGimA22i 0
 
 
 # Appendix---- good practise for beginners. 
-I am also beginner🤪.. 
+I am also beginner..🤪🥸
 ## Variance Component Estimation
 ### General
 ['aireml1.txt'](https://github.com/yebigithub/BLUPF90_usage/blob/main/VCE/general/aireml1.txt) is parameter file containing default initial variances and OPTION, we will use it in blupf90+ to get the estimated variances.
