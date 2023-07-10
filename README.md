@@ -31,10 +31,10 @@ To execute this command on log-in everytime, set the variable in ```~/.bash_prof
     - All the raw files and generated files are in the [GBLUP folder](https://github.com/yebigithub/BLUPF90_usage/tree/main/GBLUP)
 
 - Main steps:
-    - RENUM90 to generate snp_XrefID
-    - BLUPF90+ to generate variance components. 
-    - PREGSF90 to generate G inverse.
-    - BLUPF90+ to run GBLUP.
+    1. RENUM90 to generate snp_XrefID
+    2. BLUPF90+ to generate variance components. 
+    3. PREGSF90 to generate G inverse.
+    4. BLUPF90+ to run GBLUP.
 
 ### RENUM90
 - Type in all related information into renum6.txt
