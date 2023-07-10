@@ -25,7 +25,7 @@ To execute this command on log-in everytime, set the variable in ```~/.bash_prof
 
 
 ## GBLUP
-Theory and codes: https://masuday.github.io/blupf90_tutorial/mrode_c11ex113_gblup.html
+Theory and codes: https://masuday.github.io/blupf90_tutorial/mrode_c11ex113_gblup.html  
 Data: https://github.com/masuday/data
 
 ### RENUM90
