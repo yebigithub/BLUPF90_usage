@@ -14,7 +14,7 @@
 ***Similar paper about RRM***
 - Github link: https://github.com/Rostamabd/Random-Regression-Analysis/blob/master/renf90.par
 
-# Install in Mac_OS system:
+# Install BLUPF90 family in Mac_OS system:
 
 1.  Download the programs from here: http://nce.ads.uga.edu/html/projects/programs/Mac_OSX/64bit/
 2.	Put these programs in your Workshop folder. Such as ``` ~/bin ```
