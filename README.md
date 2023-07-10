@@ -70,15 +70,31 @@ OPTION createGimA22i 0
 - In terminal, run ```blupf90+ gblup.par```
 - ```solutions``` is what we want. The number information is showing in ```snp6.txt_XrefID```.
 
-## RRM
-Read this page, summarized very well.  
+## Ramdom Regression Model
+Read this tutorial page, summarized very well.  
 https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
 
 **Main steps**
-- renum: Since the rawdata and rawpedigree data are just numbers, so there is no step about renum. In real dataset, you may need renum firstly.
-- VCE: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
-- BLUPF90+ to run RRM.
+- renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renum firstly.
+- Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
+- RRM: BLUPF90+ to run random regression model.
+- If you don't want to include perminent effects, delete the following rows in ```para_mr09b.txt```.
+```
+ 5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
+ 6  8 cov 1  # Legendre polynomials (1st order) for permanent environmental effect
+ 7  8 cov 1  # Legendre polynomials (2nd order) for permanent environmental effect
 
+RANDOM_GROUP
+10 11 12
+RANDOM_TYPE
+diagonal
+FILE
+
+(CO)VARIANCES
+ 6.872 -0.254 -1.101
+-0.254  3.171  0.167
+-1.101  0.167  2.457
+```
 ## GWAS
 
 
