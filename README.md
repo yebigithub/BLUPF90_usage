@@ -41,7 +41,7 @@ To execute this command on log-in everytime, set the variable in ```~/.bash_prof
 - After that you can get the ```snp6.txt_XrefID``` in the same folder.  
 - ```renf90.par``` is what we need in next step.
 
-### BLUP90+ to get VCE
+### BLUP90+ to get variance components
 - In the last line of ```renf90.par``` add the following line to get variance components.
 ```
 OPTION method VCE
