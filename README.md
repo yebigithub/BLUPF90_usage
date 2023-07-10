@@ -97,7 +97,7 @@ FILE
 -1.101  0.167  2.457
 ```
 # GWAS to get p-val of all the markers.
-GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html
+GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html  
 PreGSF90 / PostGSF90: http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90
 ```
 OPTION snp_p_value
