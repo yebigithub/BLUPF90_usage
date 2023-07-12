@@ -74,7 +74,7 @@ OPTION createGimA22i 0
 Read this tutorial page, summarized very well.  
 https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
 
-**Main steps**
+### Main steps
 - Calculate legender polynomial matrix (Phi). There is one ref from Morota's website: http://morotalab.org/Mrode2005/rr/rr.html
 - Column bind your phenotype data and legender polynomial matrix (Phi) together as input data file.
 - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
