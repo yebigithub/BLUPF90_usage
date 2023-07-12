@@ -108,7 +108,7 @@ One paper talking about RRM-GWAS. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8
 
 
 # Appendix ---- good practise for beginners. 
-I am also a beginner..🤪🥸（所谓“现学现卖”）
+I am also a beginner..
 ## Variance Component Estimation
 ***In real data analysis, it is better to estimate variance components with reml (AI-REML or EM-REML) firstly***
 ['aireml1.txt'](https://github.com/yebigithub/BLUPF90_usage/blob/main/VCE/general/aireml1.txt) is parameter file containing default initial variances and OPTION, we will use it in blupf90+ to get the estimated variances.
