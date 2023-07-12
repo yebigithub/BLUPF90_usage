@@ -80,23 +80,6 @@ https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
 - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
 - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
 - RRM: BLUPF90+ to run random regression model.
-- If you don't want to include perminent effects, delete the following rows in ```para_mr09b.txt```.
-```
- 5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
- 6  8 cov 1  # Legendre polynomials (1st order) for permanent environmental effect
- 7  8 cov 1  # Legendre polynomials (2nd order) for permanent environmental effect
-
-RANDOM_GROUP
-10 11 12
-RANDOM_TYPE
-diagonal
-FILE
-
-(CO)VARIANCES
- 6.872 -0.254 -1.101
--0.254  3.171  0.167
--1.101  0.167  2.457
-```
 
 ### Example from Mrode textbook
 Example from [Mrode textbook](http://sherekashmir.informaticspublishing.com/278/1/9780851990002.pdf). Chapter7 7.2 Random regression model and Appendix G.
@@ -161,7 +144,23 @@ OPTION solv_method FSPAK
 ```
 - Variances and covariances are provided by textbook. For real dataset, you need to calculate them firstly.
 - [solutions](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/solutions) shows the results. Compare them with textbook page 146. For animal 3, the intercept additive effect (effect 7), first order additive effect (effect 8), and second order additive effect (effect 9) are 0.13110519， -0.02470608, 0.06857404, respectively.
+- If you don't want to include perminent effects, delete the following rows in ```para_mr09b.txt```.
+```
+ 5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
+ 6  8 cov 1  # Legendre polynomials (1st order) for permanent environmental effect
+ 7  8 cov 1  # Legendre polynomials (2nd order) for permanent environmental effect
 
+RANDOM_GROUP
+10 11 12
+RANDOM_TYPE
+diagonal
+FILE
+
+(CO)VARIANCES
+ 6.872 -0.254 -1.101
+-0.254  3.171  0.167
+-1.101  0.167  2.457
+```
 
 
 # GWAS to get p-val of all the markers.
