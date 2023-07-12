@@ -98,7 +98,7 @@ FILE
 -1.101  0.167  2.457
 ```
 
-## Example from Mrode textbook
+### Example from Mrode textbook
 Example from [Mrode textbook](http://sherekashmir.informaticspublishing.com/278/1/9780851990002.pdf). Chapter7 7.2 Random regression model and Appendix G.
 - [data_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/data_mr09b.txt): First 4 colums are phenotypes from table 7.1 in Mrode book page 138. The names are ```ID```, ```DIM```, ```HTD```, ```TDY``` respectively. The fifth to last columns are from Phi matrix, they are intercep, first, second, third, and fourth order of polynomials.  
 ***Attention***: Phi matrix just contains ten rows, which are corresponding to DIM values, so first row is for DIM=4, second row is for DIM=38, thrid row is for DIM=72, etc.  
