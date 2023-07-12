@@ -75,8 +75,9 @@ Read this tutorial page, summarized very well.
 https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
 
 **Main steps**
+- Calculate legender polynomial matrix (Phi). There is one ref from Morota's website: http://morotalab.org/Mrode2005/rr/rr.html
 - Column bind your phenotype data and legender polynomial matrix (Phi) together as input data file.
-- renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renum firstly.
+- renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
 - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
 - RRM: BLUPF90+ to run random regression model.
 - If you don't want to include perminent effects, delete the following rows in ```para_mr09b.txt```.
@@ -96,6 +97,73 @@ FILE
 -0.254  3.171  0.167
 -1.101  0.167  2.457
 ```
+
+## Example from Mrode textbook
+Example from [Mrode textbook](http://sherekashmir.informaticspublishing.com/278/1/9780851990002.pdf). Chapter7 7.2 Random regression model and Appendix G.
+- [data_mr09b.txt]: First 4 colums are phenotypes from table 7.1 in Mrode book page 138. The names are ```ID```, ```DIM```, ```HTD```, ```TDY``` respectively. The fifth to last columns are from Phi matrix, they are intercep, first, second, third, and fourth order of polynomials.  
+***Attention***: Phi matrix just contains ten rows, which are corresponding to DIM values, so first row is for DIM=4, second row is for DIM=38, thrid row is for DIM=72, etc.  
+- [param_mr09b.txt]: This is the parameter file you need in blupf90+. I will summarize important points here. Read this [link](https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html) for more detials. 
+
+```
+DATAFILE
+data_mr09b.txt
+NUMBER_OF_TRAITS
+1                       #just single trait.
+NUMBER_OF_EFFECTS
+12                      #Totally 12 effects, including 
+                        #HTD, 
+                        #5 polynomials for fixed effect, 
+                        #3polynomials for additive effects, 
+                        #3 polynomics for perminent environment.
+OBSERVATION(S)
+4                       #4th column in data_mr09b.txt is the phenotype
+WEIGHT(S)
+
+EFFECTS:
+ 3 10 cross  # HTD
+ 5  1 cov    # Legendre polynomials (intercept) for fixed regression
+ 6  1 cov    # Legendre polynomials (1st order) for fixed regression
+ 7  1 cov    # Legendre polynomials (2nd order) for fixed regression
+ 8  1 cov    # Legendre polynomials (3rd order) for fixed regression
+ 9  1 cov    # Legendre polynomials (4th order) for fixed regression
+ 5  8 cov 1  # Legendre polynomials (intercept) for additive genetic effect
+             # 5 means this effect is in the column 5 of data_mr09b.txt
+             # 8 means 8 animals
+             # 1 means this effect is nested with column 1 (ID) of data_mr09b.txt
+ 6  8 cov 1  # Legendre polynomials (1st order) for additive genetic effect
+ 7  8 cov 1  # Legendre polynomials (2nd order) for additive genetic effect
+ 5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
+ 6  8 cov 1  # Legendre polynomials (1st order) for permanent environmental effect
+ 7  8 cov 1  # Legendre polynomials (2nd order) for permanent environmental effect
+RANDOM_RESIDUAL VALUES
+3.710
+RANDOM_GROUP
+7 8 9
+RANDOM_TYPE
+add_animal
+FILE
+pedigree_mr09b.txt
+(CO)VARIANCES
+ 3.297  0.594 -1.381
+ 0.594  0.921 -0.289
+-1.381 -0.289  1.005
+RANDOM_GROUP
+10 11 12
+RANDOM_TYPE
+diagonal
+FILE
+
+(CO)VARIANCES
+ 6.872 -0.254 -1.101
+-0.254  3.171  0.167
+-1.101  0.167  2.457
+OPTION solv_method FSPAK
+```
+- Variances and covariances are provided by textbook. For real dataset, you need to calculate them firstly.
+- [solutions]() shows the results. Compare them with textbook page 146. For animal 3, the intercept additive effect (effect 7), first order additive effect (effect 8), and second order additive effect (effect 9) are 0.13110519， -0.02470608, 0.06857404, respectively.
+
+
+
 # GWAS to get p-val of all the markers.
 GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html  
 PreGSF90 / PostGSF90: http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90
