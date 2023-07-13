@@ -172,7 +172,7 @@ OPTION snp_p_value
 ```
 
 
-(```chrsnp```)[http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90] contains 
+```chrsnp``` contains 
 - 1: trait
 - 2: effect
 - 3: values of SNP effects to use in Manhattan plots → [abs(SNP_i)/var(SNP)]
