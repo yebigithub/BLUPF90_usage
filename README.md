@@ -89,11 +89,11 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
 ### Step2. Prepare your input file.
 - Column bind your phenotype data and legender polynomial matrix (Phi) together as input data file.
     - [data_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/data_mr09b.txt): First 4 colums are phenotypes from table 7.1 in Mrode book page 138. The names are ```ID```, ```DIM```, ```HTD```, ```TDY``` respectively. The fifth to last columns are from Phi matrix, they are intercep, first, second, third, and fourth order of polynomials.  
-    - ***Attention***: Phi matrix just contains ten rows, which are corresponding to DIM values, so first row is for ```DIM=4```, second row is for ```DIM=38```, thrid row is for ```DIM=72```, etc.  
+    - **Attention**: Phi matrix just contains ten rows, which are corresponding to DIM values, so first row is for ```DIM=4```, second row is for ```DIM=38```, thrid row is for ```DIM=72```, etc.  
 
-        Potential steps:  
-    - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
-    - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
+        **Potential steps:**
+        - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
+        - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
 
  ### Step3. Run BLUPF90+   
 - [param_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/param_mr09b.txt): This is the parameter file you need in blupf90+. I will summarize important points here. Read this [link](https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html) for more detials. 
