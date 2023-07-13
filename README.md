@@ -169,16 +169,16 @@ FILE
 - PreGSF90 / PostGSF90: http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90
 
 ### Example
-Input files:  
+***Input files:***
 - ```data_mr09b.txt```: phenotype and polynomial data, same as RRM.
 - ```pedigree-mr09b.txt```: pedigree data, same as RRM.
-- ```marker.geno.clean```: some online SNP dataset.
-- ```chrmap.txt```: created depending on marker information. Attention: remember to include ```SNP_ID```, ```CHR```, ```POS``` in columne names.
+- ```marker.geno.clean```: I just download some online SNP dataset and keep first 9 individuals.
+- ```chrmap.txt```:I created this depending on marker information. Attention: remember to add ```SNP_ID```, ```CHR```, ```POS``` in columne names.
 
 ***Main steps:***
-- 1. Run ```renumf90 renum.par``` in terminal to generate ```marker.geno.clean_XrefID```. 
+- 1.Run ```renumf90 renum.par``` in terminal to generate ```marker.geno.clean_XrefID```. 
     - ```renum.par``` is created depending on ```param_mr09b.txt```, remember to add ```SNP_FILE```.
-- 2. Run ```blupf90+ blupf90.par.txt``` in terminal to get the G inverse matrix, which will be used in next step.
+- 2.Run ```blupf90+ blupf90.par.txt``` in terminal to get the G inverse matrix, which will be used in next step.
     - Create ```blupf90.par.txt```, just add the following lines at the end of ```param-mr09b.txt```. 
     ```
     OPTION SNP_file marker.geno.clean
@@ -186,7 +186,7 @@ Input files:
     #OPTION weightedG w
     OPTION snp_p_value
     ```
-- 3. Run ```postGSf90 postgf90.par.txt``` in terminal to get p-val for each SNP.
+- 3.Run ```postGSf90 postgf90.par.txt``` in terminal to get p-val for each SNP.
     - ```postgf90.par.txt```, just add the following line at the end of ```param-mr09b.txt```
     ```
     OPTION SNP_file marker.geno.clean
