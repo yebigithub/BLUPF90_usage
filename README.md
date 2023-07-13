@@ -72,6 +72,7 @@ OPTION createGimA22i 0
 
 
 # Ramdom Regression Model
+### Materials:
 Read this tutorial page, summarized very well.  
 https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
 
