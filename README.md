@@ -4,8 +4,8 @@
 # Official materials
 ***More details from official website***
 - BLUPF90 wiki. http://nce.ads.uga.edu/wiki/doku.php
-- GitHub tutorial. https://masuday.github.io/blupf90_tutorial/index.html
-    Related pages.
+- GitHub tutorial. https://masuday.github.io/blupf90_tutorial/index.html  
+    Related pages.  
     - Restricted (residual) maximum likelihood with AIREMLF90: https://masuday.github.io/blupf90_tutorial/vc_aireml.html
     - GBLUP: https://masuday.github.io/blupf90_tutorial/mrode_c11ex113_gblup.html
     - Random regression model: https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
