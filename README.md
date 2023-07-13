@@ -116,8 +116,7 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
 8 276 9 13 0.7071 0.9525 0.6441 0.0176 -0.6205
 8 310 10 12.6 0.7071 1.2247 1.5811 1.8704 2.1213
 ```
-
-    **Potential steps:**
+- **Potential steps:**
     - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
     - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
 
