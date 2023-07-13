@@ -172,6 +172,16 @@ OPTION snp_p_value
 ```
 
 
+```chrsnp``` contains 
+contains data to create plot by GNUPLOT
+
+- 1: trait
+- 2: effect
+- 3: values of SNP effects to use in Manhattan plots → [abs(SNP_i)/var(SNP)]
+- 4: SNP
+- 5: Chromosome
+- 6: Position
+
 
 
 # Appendix ---- good practise for beginners. 
