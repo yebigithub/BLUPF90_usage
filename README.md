@@ -88,34 +88,35 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
 ### Step1. Calculate legender polynomial matrix (Phi)
 - Here is one ref from Dr.Morota's website about how to calculate Phi in R: http://morotalab.org/Mrode2005/rr/rr.html
 
-```
-# Phi matrix
+    ```
+    # Phi matrix
 
-0.7071 -1.2247 1.5811 -1.8704 2.1213
-0.7071 -0.9525 0.6441 -0.0176 -0.6205
-0.7071 -0.6804 -0.0586 0.7573 -0.7757
-0.7071 -0.4082 -0.5271 0.7623 0.0262
-0.7071 -0.1361 -0.7613 0.3054 0.6987
-0.7071 0.1361 -0.7613 -0.3054 0.6987
-0.7071 0.4082 -0.5271 -0.7623 0.0262
-0.7071 0.6804 -0.0586 -0.7573 -0.7757
-0.7071 0.9525 0.6441 0.0176 -0.6205
-0.7071 1.2247 1.5811 1.8704 2.1213
-```
+    0.7071 -1.2247 1.5811 -1.8704 2.1213
+    0.7071 -0.9525 0.6441 -0.0176 -0.6205
+    0.7071 -0.6804 -0.0586 0.7573 -0.7757
+    0.7071 -0.4082 -0.5271 0.7623 0.0262
+    0.7071 -0.1361 -0.7613 0.3054 0.6987
+    0.7071 0.1361 -0.7613 -0.3054 0.6987
+    0.7071 0.4082 -0.5271 -0.7623 0.0262
+    0.7071 0.6804 -0.0586 -0.7573 -0.7757
+    0.7071 0.9525 0.6441 0.0176 -0.6205
+    0.7071 1.2247 1.5811 1.8704 2.1213
+    ```
 
 ### Step2. Prepare your input file.
 - Column bind your phenotype data and legender polynomial matrix (Phi) together as input data file.
 - [data_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/data_mr09b.txt): First 4 colums are phenotypes from table 7.1 in Mrode book page 138. The names are ```ID```, ```DIM```, ```HTD```, ```TDY``` respectively. The fifth to last columns are from Phi matrix, they are intercep, first, second, third, and fourth order of polynomials.  
 - **Attention**: Phi matrix just contains ten rows, which are corresponding to DIM values, so first row is for ```DIM=4```, second row is for ```DIM=38```, thrid row is for ```DIM=72```, etc.  
 
-```
-# data_mr09b.txt
-4 4 1 17 0.7071 -1.2247 1.5811 -1.8704 2.1213
-4 38 2 18.6 0.7071 -0.9525 0.6441 -0.0176 -0.6205
-.....
-8 276 9 13 0.7071 0.9525 0.6441 0.0176 -0.6205
-8 310 10 12.6 0.7071 1.2247 1.5811 1.8704 2.1213
-```
+    ```
+    # data_mr09b.txt
+
+    4 4 1 17 0.7071 -1.2247 1.5811 -1.8704 2.1213
+    4 38 2 18.6 0.7071 -0.9525 0.6441 -0.0176 -0.6205
+    .....
+    8 276 9 13 0.7071 0.9525 0.6441 0.0176 -0.6205
+    8 310 10 12.6 0.7071 1.2247 1.5811 1.8704 2.1213
+    ```
 - **Potential steps:**
     - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
     - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
@@ -123,61 +124,61 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
 ### Step3. Run BLUPF90+   
 - [param_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/param_mr09b.txt): This is the parameter file you need in blupf90+. I will summarize important points here. Read this [link](https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html) for more detials. 
 
-```
-DATAFILE
-data_mr09b.txt
-NUMBER_OF_TRAITS
-1                       #just single trait.
-NUMBER_OF_EFFECTS
-12                      #Totally 12 effects, including 
-                        #HTD, 
-                        #5 polynomials for fixed effect, 
-                        #3polynomials for additive effects, 
-                        #3 polynomics for perminent environment.
-OBSERVATION(S)
-4                       #4th column in data_mr09b.txt is the phenotype
-WEIGHT(S)
+    ```
+    DATAFILE
+    data_mr09b.txt
+    NUMBER_OF_TRAITS
+    1                       #just single trait.
+    NUMBER_OF_EFFECTS
+    12                      #Totally 12 effects, including 
+                            #HTD, 
+                            #5 polynomials for fixed effect, 
+                            #3polynomials for additive effects, 
+                            #3 polynomics for perminent environment.
+    OBSERVATION(S)
+    4                       #4th column in data_mr09b.txt is the phenotype
+    WEIGHT(S)
 
-EFFECTS:
- 3 10 cross  # HTD
- 5  1 cov    # Legendre polynomials (intercept) for fixed regression
- 6  1 cov    # Legendre polynomials (1st order) for fixed regression
- 7  1 cov    # Legendre polynomials (2nd order) for fixed regression
- 8  1 cov    # Legendre polynomials (3rd order) for fixed regression
- 9  1 cov    # Legendre polynomials (4th order) for fixed regression
- 5  8 cov 1  # Legendre polynomials (intercept) for additive genetic effect
-             # 5 means this effect is in the column 5 of data_mr09b.txt
-             # 8 means 8 animals
-             # 1 means this effect is nested with column 1 (ID) of data_mr09b.txt
- 6  8 cov 1  # Legendre polynomials (1st order) for additive genetic effect
- 7  8 cov 1  # Legendre polynomials (2nd order) for additive genetic effect
- 5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
- 6  8 cov 1  # Legendre polynomials (1st order) for permanent environmental effect
- 7  8 cov 1  # Legendre polynomials (2nd order) for permanent environmental effect
-RANDOM_RESIDUAL VALUES
-3.710
-RANDOM_GROUP
-7 8 9
-RANDOM_TYPE
-add_animal
-FILE
-pedigree_mr09b.txt
-(CO)VARIANCES
- 3.297  0.594 -1.381
- 0.594  0.921 -0.289
--1.381 -0.289  1.005
-RANDOM_GROUP
-10 11 12
-RANDOM_TYPE
-diagonal
-FILE
+    EFFECTS:
+    3 10 cross  # HTD
+    5  1 cov    # Legendre polynomials (intercept) for fixed regression
+    6  1 cov    # Legendre polynomials (1st order) for fixed regression
+    7  1 cov    # Legendre polynomials (2nd order) for fixed regression
+    8  1 cov    # Legendre polynomials (3rd order) for fixed regression
+    9  1 cov    # Legendre polynomials (4th order) for fixed regression
+    5  8 cov 1  # Legendre polynomials (intercept) for additive genetic effect
+                # 5 means this effect is in the column 5 of data_mr09b.txt
+                # 8 means 8 animals
+                # 1 means this effect is nested with column 1 (ID) of data_mr09b.txt
+    6  8 cov 1  # Legendre polynomials (1st order) for additive genetic effect
+    7  8 cov 1  # Legendre polynomials (2nd order) for additive genetic effect
+    5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
+    6  8 cov 1  # Legendre polynomials (1st order) for permanent environmental effect
+    7  8 cov 1  # Legendre polynomials (2nd order) for permanent environmental effect
+    RANDOM_RESIDUAL VALUES
+    3.710
+    RANDOM_GROUP
+    7 8 9
+    RANDOM_TYPE
+    add_animal
+    FILE
+    pedigree_mr09b.txt
+    (CO)VARIANCES
+    3.297  0.594 -1.381
+    0.594  0.921 -0.289
+    -1.381 -0.289  1.005
+    RANDOM_GROUP
+    10 11 12
+    RANDOM_TYPE
+    diagonal
+    FILE
 
-(CO)VARIANCES
- 6.872 -0.254 -1.101
--0.254  3.171  0.167
--1.101  0.167  2.457
-OPTION solv_method FSPAK
-```
+    (CO)VARIANCES
+    6.872 -0.254 -1.101
+    -0.254  3.171  0.167
+    -1.101  0.167  2.457
+    OPTION solv_method FSPAK
+    ```
 
 - If you don't want to include perminent effects, delete the following rows in ```para_mr09b.txt```.
 ```
@@ -222,25 +223,182 @@ FILE
 - Run ```renumf90 renum.par``` in terminal to generate ```marker.geno.clean_XrefID```. 
 - [renum.par](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/renum.par) is created depending on ```param_mr09b.txt```, remember to add ```SNP_FILE```.
 
+    ```
+    # renum.par
+
+    DATAFILE
+    data_mr09b.txt
+    TRAITS
+    4
+    WEIGHT(S)
+
+    RESIDUAL_VARIANCE
+    3.710
+    EFFECT
+    3 cross alpha
+    EFFECT
+    5 cov
+    EFFECT
+    6 cov
+    EFFECT
+    7 cov
+    EFFECT
+    8 cov
+    EFFECT
+    9 cov
+    EFFECT
+    1 cross alpha 
+    RANDOM
+    animal
+    FILE
+    pedigree_mr09b.txt
+    SNP_FILE
+    marker.geno.clean
+    RANDOM_REGRESSION
+    data
+    RR_POSITION
+    5 6 7
+    (CO)VARIANCES   
+    3.297  0.594 -1.381
+    0.594  0.921 -0.289
+    -1.381 -0.289  1.005
+    EFFECT
+    1 cross alpha 
+    RANDOM
+    diagonal
+    FILE
+    data_mr09b.txt
+    RANDOM_REGRESSION
+    data
+    RR_POSITION
+    5 6 7
+    (CO)VARIANCES   
+    6.872 -0.254 -1.101
+    -0.254  3.171  0.167
+    -1.101  0.167  2.457
+    OPTION solv_method FSPAK
+    ```
 ### Step2. BLUPF90+
 - Run ```blupf90+ blupf90.par.txt``` in terminal to get the G inverse matrix, which will be used in next step.
-- Create [blupf90.par.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/blupf90.par.txt), just add the following lines at the end of ```param-mr09b.txt```. 
+- Create [blupf90.par.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/blupf90.par.txt), just add the last several lines at the end of ```param-mr09b.txt```. 
     ```
+    # blupf90.par.txt
+
+    ### This is for BLUPF90
+
+    DATAFILE
+    data_mr09b.txt
+    NUMBER_OF_TRAITS
+    1
+    NUMBER_OF_EFFECTS
+    12
+    OBSERVATION(S)
+    4
+    WEIGHT(S)
+
+    EFFECTS:
+    3 10 cross  # HTD
+    5  1 cov    # Legendre polynomials (intercept) for fixed regression
+    6  1 cov    # Legendre polynomials (1st order) for fixed regression
+    7  1 cov    # Legendre polynomials (2nd order) for fixed regression
+    8  1 cov    # Legendre polynomials (3rd order) for fixed regression
+    9  1 cov    # Legendre polynomials (4th order) for fixed regression
+    5  8 cov 1  # Legendre polynomials (intercept) for additive genetic effect
+    6  8 cov 1  # Legendre polynomials (1st order) for additive genetic effect
+    7  8 cov 1  # Legendre polynomials (2nd order) for additive genetic effect
+    5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
+    6  8 cov 1  # Legendre polynomials (1st order) for permanent environmental effect
+    7  8 cov 1  # Legendre polynomials (2nd order) for permanent environmental effect
+    RANDOM_RESIDUAL VALUES
+    3.710
+    RANDOM_GROUP
+    7 8 9
+    RANDOM_TYPE
+    add_animal
+    FILE
+    pedigree_mr09b.txt
+    (CO)VARIANCES
+    3.297  0.594 -1.381
+    0.594  0.921 -0.289
+    -1.381 -0.289  1.005
+    RANDOM_GROUP
+    10 11 12
+    RANDOM_TYPE
+    diagonal
+    FILE
+
+    (CO)VARIANCES
+    6.872 -0.254 -1.101
+    -0.254  3.171  0.167
+    -1.101  0.167  2.457
+
     OPTION SNP_file marker.geno.clean
     OPTION saveGInverse
     #OPTION weightedG w
     OPTION snp_p_value
     ```
+
 ### Step3. POSTGSF90
 - Run ```postGSf90 postgf90.par.txt``` in terminal to get p-val for each SNP.
-- [postgf90.par.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/postgf90.par.txt), just add the following line at the end of ```param-mr09b.txt```
+- [postgf90.par.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/postgf90.par.txt), just add the last several line at the end of ```param-mr09b.txt```
     ```
+    # postgf90.par.txt
+
+    ### This is for PostGSF90
+
+    DATAFILE
+    data_mr09b.txt
+    NUMBER_OF_TRAITS
+    1
+    NUMBER_OF_EFFECTS
+    12
+    OBSERVATION(S)
+    4
+    WEIGHT(S)
+
+    EFFECTS:
+    3 10 cross  # HTD
+    5  1 cov    # Legendre polynomials (intercept) for fixed regression
+    6  1 cov    # Legendre polynomials (1st order) for fixed regression
+    7  1 cov    # Legendre polynomials (2nd order) for fixed regression
+    8  1 cov    # Legendre polynomials (3rd order) for fixed regression
+    9  1 cov    # Legendre polynomials (4th order) for fixed regression
+    5  8 cov 1  # Legendre polynomials (intercept) for additive genetic effect
+    6  8 cov 1  # Legendre polynomials (1st order) for additive genetic effect
+    7  8 cov 1  # Legendre polynomials (2nd order) for additive genetic effect
+    5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
+    6  8 cov 1  # Legendre polynomials (1st order) for permanent environmental effect
+    7  8 cov 1  # Legendre polynomials (2nd order) for permanent environmental effect
+    RANDOM_RESIDUAL VALUES
+    3.710
+    RANDOM_GROUP
+    7 8 9
+    RANDOM_TYPE
+    add_animal
+    FILE
+    pedigree_mr09b.txt
+    (CO)VARIANCES
+    3.297  0.594 -1.381
+    0.594  0.921 -0.289
+    -1.381 -0.289  1.005
+    RANDOM_GROUP
+    10 11 12
+    RANDOM_TYPE
+    diagonal
+    FILE
+
+    (CO)VARIANCES
+    6.872 -0.254 -1.101
+    -0.254  3.171  0.167
+    -1.101  0.167  2.457
+
     OPTION SNP_file marker.geno.clean
     OPTION readGInverse
     #OPTION weightedG w
     OPTION map_file chrmap.txt
     OPTION snp_p_value
     ```
+
 ### Output files:
 - [chrsnp_pval](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/chrsnp_pval) contains ```trait```, ```effect```, ```-log10(p-value)```, ```SNP```, ```Chromosome```, ```Position in bp``` in columns.
 - [solutions](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/solutions) is same as RRM solutions.
