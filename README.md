@@ -88,10 +88,34 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
 ### Step1. Calculate legender polynomial matrix (Phi)
 - Here is one ref from Dr.Morota's website about how to calculate Phi in R: http://morotalab.org/Mrode2005/rr/rr.html
 
+```
+# Phi matrix
+
+0.7071 -1.2247 1.5811 -1.8704 2.1213
+0.7071 -0.9525 0.6441 -0.0176 -0.6205
+0.7071 -0.6804 -0.0586 0.7573 -0.7757
+0.7071 -0.4082 -0.5271 0.7623 0.0262
+0.7071 -0.1361 -0.7613 0.3054 0.6987
+0.7071 0.1361 -0.7613 -0.3054 0.6987
+0.7071 0.4082 -0.5271 -0.7623 0.0262
+0.7071 0.6804 -0.0586 -0.7573 -0.7757
+0.7071 0.9525 0.6441 0.0176 -0.6205
+0.7071 1.2247 1.5811 1.8704 2.1213
+```
+
 ### Step2. Prepare your input file.
 - Column bind your phenotype data and legender polynomial matrix (Phi) together as input data file.
 - [data_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/data_mr09b.txt): First 4 colums are phenotypes from table 7.1 in Mrode book page 138. The names are ```ID```, ```DIM```, ```HTD```, ```TDY``` respectively. The fifth to last columns are from Phi matrix, they are intercep, first, second, third, and fourth order of polynomials.  
 - **Attention**: Phi matrix just contains ten rows, which are corresponding to DIM values, so first row is for ```DIM=4```, second row is for ```DIM=38```, thrid row is for ```DIM=72```, etc.  
+
+```
+# data_mr09b.txt
+4 4 1 17 0.7071 -1.2247 1.5811 -1.8704 2.1213
+4 38 2 18.6 0.7071 -0.9525 0.6441 -0.0176 -0.6205
+.....
+8 276 9 13 0.7071 0.9525 0.6441 0.0176 -0.6205
+8 310 10 12.6 0.7071 1.2247 1.5811 1.8704 2.1213
+```
 
     **Potential steps:**
     - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
