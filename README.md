@@ -401,6 +401,16 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
 
 ### Output files:
 - [chrsnp_pval](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/chrsnp_pval) contains ```trait```, ```effect```, ```-log10(p-value)```, ```SNP```, ```Chromosome```, ```Position in bp``` in columns.
+    ```
+         1         7        0.2159678458          1          1          0
+         1         7        0.0263095808          2          1       8004
+         1         7        0.0202482194          3          1      12006
+         1         7        0.1681145653          4          1      16008
+         1         7        0.2160021499          5          1      20010
+         1         7        0.0099420783          6          1      32016
+         1         7        0.0737873474          7          1      40020
+         1         7        0.1062053558          8          1      44022
+    ```
 - [solutions](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/solutions) is same as RRM solutions.
 
 
