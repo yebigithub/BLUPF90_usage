@@ -1,3 +1,5 @@
+### This is for BLUPF90
+
 DATAFILE
 data_mr09b.txt
 NUMBER_OF_TRAITS
