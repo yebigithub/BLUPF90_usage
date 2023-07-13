@@ -168,7 +168,7 @@ FILE
 - GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html 
 - PreGSF90 / PostGSF90: http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90
 
-## Example
+### Example
 Input files:  
 - ```data_mr09b.txt```: phenotype and polynomial data, same as RRM.
 - ```pedigree-mr09b.txt```: pedigree data, same as RRM.
