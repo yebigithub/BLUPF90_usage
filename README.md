@@ -170,13 +170,13 @@ FILE
 
 
 
-```chrsnp``` contains 
-- 1: trait
-- 2: effect
-- 3: values of SNP effects to use in Manhattan plots → [abs(SNP_i)/var(SNP)]
-- 4: SNP
-- 5: Chromosome
-- 6: Position
+```chrsnp_pval``` contains 
+1: trait  
+2: effect  
+3: -log10(p-value)  
+4: SNP  
+5: Chromosome  
+6: Position in bp  
 
 
 
