@@ -178,11 +178,11 @@ FILE
 **Main steps:**
 ### Step1. RENUM90
 - Run ```renumf90 renum.par``` in terminal to generate ```marker.geno.clean_XrefID```. 
-- [```renum.par```](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/renum.par) is created depending on ```param_mr09b.txt```, remember to add ```SNP_FILE```.
+- [renum.par](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/renum.par) is created depending on ```param_mr09b.txt```, remember to add ```SNP_FILE```.
 
 ### Step2. BLUPF90+
 - Run ```blupf90+ blupf90.par.txt``` in terminal to get the G inverse matrix, which will be used in next step.
-- Create (blupf90.par.txt)[], just add the following lines at the end of ```param-mr09b.txt```. 
+- Create [blupf90.par.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/blupf90.par.txt), just add the following lines at the end of ```param-mr09b.txt```. 
     ```
     OPTION SNP_file marker.geno.clean
     OPTION saveGInverse
@@ -191,7 +191,7 @@ FILE
     ```
 ### Step3. POSTGSF90
 - Run ```postGSf90 postgf90.par.txt``` in terminal to get p-val for each SNP.
-- (postgf90.par.txt)[], just add the following line at the end of ```param-mr09b.txt```
+- [postgf90.par.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/postgf90.par.txt), just add the following line at the end of ```param-mr09b.txt```
     ```
     OPTION SNP_file marker.geno.clean
     OPTION readGInverse
@@ -200,8 +200,8 @@ FILE
     OPTION snp_p_value
     ```
 ### Output files:
-- (chrsnp_pval)[] contains ```trait```, ```effect```, ```-log10(p-value)```, ```SNP```, ```Chromosome```, ```Position in bp``` in columns.
-- (solutions)[] is same as RRM solutions.
+- [chrsnp_pval](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/chrsnp_pval) contains ```trait```, ```effect```, ```-log10(p-value)```, ```SNP```, ```Chromosome```, ```Position in bp``` in columns.
+- [solutions](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/solutions) is same as RRM solutions.
 
 
 # Appendix ---- good practise for beginners. 
