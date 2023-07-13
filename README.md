@@ -165,12 +165,12 @@ FILE
 
 # GWAS to get p-val of all the markers.
 GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html  
+    - Algorithm in this page is interesting.
 PreGSF90 / PostGSF90: http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90
 ```
 OPTION snp_p_value
 ```
-notes: for RRM-GWAS, I need some time to think...
-One paper talking about RRM-GWAS. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8470172/pdf/animals-11-02524.pdf  
+
 
 
 
