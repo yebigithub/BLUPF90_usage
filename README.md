@@ -170,13 +170,13 @@ FILE
 
 
 
-```chrsnp_pval``` contains 
-1: trait  
-2: effect  
-3: -log10(p-value)  
-4: SNP  
-5: Chromosome  
-6: Position in bp  
+```chrsnp_pval``` contains  
+    1: trait  
+    2: effect  
+    3: -log10(p-value)  
+    4: SNP  
+    5: Chromosome  
+    6: Position in bp  
 
 
 
