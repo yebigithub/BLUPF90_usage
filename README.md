@@ -168,9 +168,17 @@ FILE
 - GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html 
 - PreGSF90 / PostGSF90: http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90
 
+## Example
+Input files:  
+- ```data_mr09b.txt```: phenotype and polynomial data, same as RRM.
+- ```pedigree-mr09b.txt```: pedigree data, same as RRM.
+- ```marker.geno.clean```: some online SNP dataset.
+- ```chrmap.txt```: created depending on marker information. Attention: remember to include ```SNP_ID```, ```CHR```, ```POS``` in columne names.
 
 
-```chrsnp_pval``` contains ```trait```, ```effect```, ```-log10(p-value)```, ```SNP```, ```Chromosome```, ```Position in bp``` .
+
+Output files:  
+- ```chrsnp_pval``` contains ```trait```, ```effect```, ```-log10(p-value)```, ```SNP```, ```Chromosome```, ```Position in bp``` in columns.
 
 
 # Appendix ---- good practise for beginners. 
