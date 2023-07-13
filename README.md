@@ -170,7 +170,7 @@ FILE
 
 
 
-```chrsnp_pval``` contains ```trait```, ````effect```, ```-log10(p-value) ```, ```SNP```, ```Chromosome```, ```Position in bp``` .
+```chrsnp_pval``` contains ```trait```, ```effect```, ```-log10(p-value)```, ```SNP```, ```Chromosome```, ```Position in bp``` .
 
 
 # Appendix ---- good practise for beginners. 
