@@ -176,9 +176,9 @@ FILE
 - ```chrmap.txt```:I created this depending on marker information. Attention: remember to add ```SNP_ID```, ```CHR```, ```POS``` in columne names.
 
 ***Main steps:***
-- 1.Run ```renumf90 renum.par``` in terminal to generate ```marker.geno.clean_XrefID```. 
+- Step1. Run ```renumf90 renum.par``` in terminal to generate ```marker.geno.clean_XrefID```. 
     - ```renum.par``` is created depending on ```param_mr09b.txt```, remember to add ```SNP_FILE```.
-- 2.Run ```blupf90+ blupf90.par.txt``` in terminal to get the G inverse matrix, which will be used in next step.
+- Step2. Run ```blupf90+ blupf90.par.txt``` in terminal to get the G inverse matrix, which will be used in next step.
     - Create ```blupf90.par.txt```, just add the following lines at the end of ```param-mr09b.txt```. 
     ```
     OPTION SNP_file marker.geno.clean
@@ -186,7 +186,7 @@ FILE
     #OPTION weightedG w
     OPTION snp_p_value
     ```
-- 3.Run ```postGSf90 postgf90.par.txt``` in terminal to get p-val for each SNP.
+- Step3. Run ```postGSf90 postgf90.par.txt``` in terminal to get p-val for each SNP.
     - ```postgf90.par.txt```, just add the following line at the end of ```param-mr09b.txt```
     ```
     OPTION SNP_file marker.geno.clean
