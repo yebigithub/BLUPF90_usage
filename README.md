@@ -54,6 +54,7 @@ OPTION method VCE
 - Copy paste ```renf90.par``` and rename into ```preparam.par```
 - From ```blupf90.log```, extract the residual variance, and effect variance, and type them into ```preparam.par```. 
 - In the last part of preparam.par, add the following lines:
+
 ```
 OPTION SNP_file snp6.txt snp6.txt_XrefID   #add XrefID file.
 OPTION no_quality_control
@@ -117,6 +118,7 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
     8 276 9 13 0.7071 0.9525 0.6441 0.0176 -0.6205
     8 310 10 12.6 0.7071 1.2247 1.5811 1.8704 2.1213
     ```
+
 - **Potential steps:**
     - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
     - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
@@ -181,6 +183,7 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
     ```
 
 - If you don't want to include perminent effects, delete the following rows in ```para_mr09b.txt```.
+
     ```
     5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
     6  8 cov 1  # Legendre polynomials (1st order) for permanent environmental effect
@@ -200,7 +203,6 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
 
 ### Output files:
 - [solutions](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/solutions) shows the results. Compare them with textbook page 146. For animal 3, the intercept additive effect (effect 7), first order additive effect (effect 8), and second order additive effect (effect 9) are 0.13110519， -0.02470608, 0.06857404, respectively.
-
 
 
 # GWAS to get p-val of all the markers.
@@ -278,9 +280,11 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
     -1.101  0.167  2.457
     OPTION solv_method FSPAK
     ```
+
 ### Step2. BLUPF90+
 - Run ```blupf90+ blupf90.par.txt``` in terminal to get the G inverse matrix, which will be used in next step.
 - Create [blupf90.par.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/blupf90.par.txt), just add the last several lines at the end of ```param-mr09b.txt```. 
+
     ```
     # blupf90.par.txt
 
@@ -341,6 +345,7 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
 ### Step3. POSTGSF90
 - Run ```postGSf90 postgf90.par.txt``` in terminal to get p-val for each SNP.
 - [postgf90.par.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/postgf90.par.txt), just add the last several line at the end of ```param-mr09b.txt```
+
     ```
     # postgf90.par.txt
 
