@@ -25,12 +25,12 @@ To execute this command on log-in everytime, set the variable in ```~/.bash_prof
 
 
 # GBLUP
-**Materials:**  
+### Materials:
 - Theory and codes: https://masuday.github.io/blupf90_tutorial/mrode_c11ex113_gblup.html  
 - Data: I didn't find the rawdata in the website above, so I used rawdata6 from ssGBLUP. Including ```rawdata6.txt```, ```snp6.txt```, ```rawpedegree.txt```.  
 - All the raw files and generated files are in the [GBLUP folder](https://github.com/yebigithub/BLUPF90_usage/tree/main/GBLUP)
 
-**Main steps:**  
+### Main steps:
 - Setp1. RENUM90 to generate snp_XrefID  
 - Setp2. BLUPF90+ to generate variance components.   
 - Setp3. PREGSF90 to generate G inverse.  
@@ -70,6 +70,7 @@ OPTION createGimA22i 0
 - In terminal, run ```blupf90+ gblup.par```
 - ```solutions``` is what we want. The number information is showing in ```snp6.txt_XrefID```.
 
+
 # Ramdom Regression Model
 Read this tutorial page, summarized very well.  
 https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
@@ -88,14 +89,14 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
 
 ### Step2. Prepare your input file.
 - Column bind your phenotype data and legender polynomial matrix (Phi) together as input data file.
-    - [data_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/data_mr09b.txt): First 4 colums are phenotypes from table 7.1 in Mrode book page 138. The names are ```ID```, ```DIM```, ```HTD```, ```TDY``` respectively. The fifth to last columns are from Phi matrix, they are intercep, first, second, third, and fourth order of polynomials.  
-    - **Attention**: Phi matrix just contains ten rows, which are corresponding to DIM values, so first row is for ```DIM=4```, second row is for ```DIM=38```, thrid row is for ```DIM=72```, etc.  
+- [data_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/data_mr09b.txt): First 4 colums are phenotypes from table 7.1 in Mrode book page 138. The names are ```ID```, ```DIM```, ```HTD```, ```TDY``` respectively. The fifth to last columns are from Phi matrix, they are intercep, first, second, third, and fourth order of polynomials.  
+- **Attention**: Phi matrix just contains ten rows, which are corresponding to DIM values, so first row is for ```DIM=4```, second row is for ```DIM=38```, thrid row is for ```DIM=72```, etc.  
 
-        **Potential steps:**
-        - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
-        - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
+    **Potential steps:**
+    - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
+    - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
 
- ### Step3. Run BLUPF90+   
+### Step3. Run BLUPF90+   
 - [param_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/param_mr09b.txt): This is the parameter file you need in blupf90+. I will summarize important points here. Read this [link](https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html) for more detials. 
 
 ```
@@ -182,14 +183,13 @@ FILE
 - GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html 
 - PreGSF90 / PostGSF90: http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90
 
-### Example
-**Input files:**
+### Input files
 - ```data_mr09b.txt```: phenotype and polynomial data, same as RRM.
 - ```pedigree-mr09b.txt```: pedigree data, same as RRM.
 - ```marker.geno.clean```: I just download some online SNP dataset and keep first 9 individuals.
 - ```chrmap.txt```:I created this depending on marker information. Attention: remember to add ```SNP_ID```, ```CHR```, ```POS``` in columne names.
 
-**Main steps:**
+### Main steps
 ### Step1. RENUM90
 - Run ```renumf90 renum.par``` in terminal to generate ```marker.geno.clean_XrefID```. 
 - [renum.par](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/renum.par) is created depending on ```param_mr09b.txt```, remember to add ```SNP_FILE```.
