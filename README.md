@@ -75,7 +75,7 @@ Read this tutorial page, summarized very well.
 https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
 
 ### Main steps
-- Calculate legender polynomial matrix (Phi). There is one ref from Morota's website: http://morotalab.org/Mrode2005/rr/rr.html
+- Calculate legender polynomial matrix (Phi). There is one ref from Dr.Morota's website: http://morotalab.org/Mrode2005/rr/rr.html
 - Column bind your phenotype data and legender polynomial matrix (Phi) together as input data file.
 - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
 - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
@@ -164,12 +164,10 @@ FILE
 
 
 # GWAS to get p-val of all the markers.
-- GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html  
-    - Algorithm in this page is interesting.
+### related materials 
+- GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html 
 - PreGSF90 / PostGSF90: http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90
-```
-OPTION snp_p_value
-```
+
 
 
 ```chrsnp``` contains 
