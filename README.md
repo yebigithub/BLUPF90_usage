@@ -401,6 +401,7 @@ This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.
 
 ### Output files:
 - [chrsnp_pval](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/chrsnp_pval) contains ```trait```, ```effect```, ```-log10(p-value)```, ```SNP```, ```Chromosome```, ```Position in bp``` in columns.
+
     ```
          1         7        0.2159678458          1          1          0
          1         7        0.0263095808          2          1       8004
