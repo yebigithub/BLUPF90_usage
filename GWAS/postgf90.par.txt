@@ -1,0 +1,51 @@
+DATAFILE
+data_mr09b.txt
+NUMBER_OF_TRAITS
+1
+NUMBER_OF_EFFECTS
+12
+OBSERVATION(S)
+4
+WEIGHT(S)
+
+EFFECTS:
+ 3 10 cross  # HTD
+ 5  1 cov    # Legendre polynomials (intercept) for fixed regression
+ 6  1 cov    # Legendre polynomials (1st order) for fixed regression
+ 7  1 cov    # Legendre polynomials (2nd order) for fixed regression
+ 8  1 cov    # Legendre polynomials (3rd order) for fixed regression
+ 9  1 cov    # Legendre polynomials (4th order) for fixed regression
+ 5  8 cov 1  # Legendre polynomials (intercept) for additive genetic effect
+ 6  8 cov 1  # Legendre polynomials (1st order) for additive genetic effect
+ 7  8 cov 1  # Legendre polynomials (2nd order) for additive genetic effect
+ 5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
+ 6  8 cov 1  # Legendre polynomials (1st order) for permanent environmental effect
+ 7  8 cov 1  # Legendre polynomials (2nd order) for permanent environmental effect
+RANDOM_RESIDUAL VALUES
+3.710
+RANDOM_GROUP
+7 8 9
+RANDOM_TYPE
+add_animal
+FILE
+pedigree_mr09b.txt
+(CO)VARIANCES
+ 3.297  0.594 -1.381
+ 0.594  0.921 -0.289
+-1.381 -0.289  1.005
+RANDOM_GROUP
+10 11 12
+RANDOM_TYPE
+diagonal
+FILE
+
+(CO)VARIANCES
+ 6.872 -0.254 -1.101
+-0.254  3.171  0.167
+-1.101  0.167  2.457
+
+OPTION SNP_file marker.geno.clean
+OPTION readGInverse
+#OPTION weightedG w
+OPTION map_file chrmap.txt
+OPTION snp_p_value
