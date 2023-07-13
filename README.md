@@ -164,30 +164,34 @@ FILE
 
 
 # GWAS to get p-val of all the markers.
-### related materials 
+### Related materials 
 - GWAS using the ssGBLUP framework: https://masuday.github.io/blupf90_tutorial/genomic_gwas.html 
 - PreGSF90 / PostGSF90: http://nce.ads.uga.edu/wiki/doku.php?id=readme.pregsf90
 
 ### Example
-***Input files:***
+**Input files:**
 - ```data_mr09b.txt```: phenotype and polynomial data, same as RRM.
 - ```pedigree-mr09b.txt```: pedigree data, same as RRM.
 - ```marker.geno.clean```: I just download some online SNP dataset and keep first 9 individuals.
 - ```chrmap.txt```:I created this depending on marker information. Attention: remember to add ```SNP_ID```, ```CHR```, ```POS``` in columne names.
 
-***Main steps:***
-- **Step1**. Run ```renumf90 renum.par``` in terminal to generate ```marker.geno.clean_XrefID```. 
-    - ```renum.par``` is created depending on ```param_mr09b.txt```, remember to add ```SNP_FILE```.
-- **Step2**. Run ```blupf90+ blupf90.par.txt``` in terminal to get the G inverse matrix, which will be used in next step.
-    - Create ```blupf90.par.txt```, just add the following lines at the end of ```param-mr09b.txt```. 
+**Main steps:**
+### Step1. RENUM90
+- Run ```renumf90 renum.par``` in terminal to generate ```marker.geno.clean_XrefID```. 
+- [```renum.par```](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/renum.par) is created depending on ```param_mr09b.txt```, remember to add ```SNP_FILE```.
+
+### Step2. BLUPF90+
+- Run ```blupf90+ blupf90.par.txt``` in terminal to get the G inverse matrix, which will be used in next step.
+- Create (blupf90.par.txt)[], just add the following lines at the end of ```param-mr09b.txt```. 
     ```
     OPTION SNP_file marker.geno.clean
     OPTION saveGInverse
     #OPTION weightedG w
     OPTION snp_p_value
     ```
-- **Step3**. Run ```postGSf90 postgf90.par.txt``` in terminal to get p-val for each SNP.
-    - ```postgf90.par.txt```, just add the following line at the end of ```param-mr09b.txt```
+### Step3. POSTGSF90
+- Run ```postGSf90 postgf90.par.txt``` in terminal to get p-val for each SNP.
+- (postgf90.par.txt)[], just add the following line at the end of ```param-mr09b.txt```
     ```
     OPTION SNP_file marker.geno.clean
     OPTION readGInverse
@@ -195,9 +199,9 @@ FILE
     OPTION map_file chrmap.txt
     OPTION snp_p_value
     ```
-***Output files:***  
-- ```chrsnp_pval``` contains ```trait```, ```effect```, ```-log10(p-value)```, ```SNP```, ```Chromosome```, ```Position in bp``` in columns.
-- ```solutions``` is same as RRM solutions.
+### Output files:
+- (chrsnp_pval)[] contains ```trait```, ```effect```, ```-log10(p-value)```, ```SNP```, ```Chromosome```, ```Position in bp``` in columns.
+- (solutions)[] is same as RRM solutions.
 
 
 # Appendix ---- good practise for beginners. 
