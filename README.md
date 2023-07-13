@@ -1,5 +1,5 @@
 # BLUPF90_usage
-**How to use BLUPF90 To fit random regression model for genomic prediction and GWAS?**
+**How to use BLUPF90 To fit random regression model for genomic prediction and run RRM-GWAS to get p-val for each SNP marker?**
 
 # Official materials
 ***More details from official website***
