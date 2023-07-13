@@ -75,16 +75,27 @@ Read this tutorial page, summarized very well.
 https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
 
 ### Main steps
-- Calculate legender polynomial matrix (Phi). There is one ref from Dr.Morota's website: http://morotalab.org/Mrode2005/rr/rr.html
-- Column bind your phenotype data and legender polynomial matrix (Phi) together as input data file.
-- renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
-- Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
-- RRM: BLUPF90+ to run random regression model.
+- Step1. Calculate legender polynomial matrix (Phi). 
+- Step2. Prepare input file.
+- Step3. Run BLUPF90+ to fit random regression model.
 
 ### Example from Mrode textbook
-Example from [Mrode textbook](http://sherekashmir.informaticspublishing.com/278/1/9780851990002.pdf). Chapter7 7.2 Random regression model and Appendix G.
-- [data_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/data_mr09b.txt): First 4 colums are phenotypes from table 7.1 in Mrode book page 138. The names are ```ID```, ```DIM```, ```HTD```, ```TDY``` respectively. The fifth to last columns are from Phi matrix, they are intercep, first, second, third, and fourth order of polynomials.  
-***Attention***: Phi matrix just contains ten rows, which are corresponding to DIM values, so first row is for ```DIM=4```, second row is for ```DIM=38```, thrid row is for ```DIM=72```, etc.  
+
+This example is from [Mrode textbook](http://sherekashmir.informaticspublishing.com/278/1/9780851990002.pdf). Chapter7 7.2 Random regression model and Appendix G.  
+
+### Step1. Calculate legender polynomial matrix (Phi)
+- Here is one ref from Dr.Morota's website about how to calculate Phi in R: http://morotalab.org/Mrode2005/rr/rr.html
+
+### Step2. Prepare your input file.
+- Column bind your phenotype data and legender polynomial matrix (Phi) together as input data file.
+    - [data_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/data_mr09b.txt): First 4 colums are phenotypes from table 7.1 in Mrode book page 138. The names are ```ID```, ```DIM```, ```HTD```, ```TDY``` respectively. The fifth to last columns are from Phi matrix, they are intercep, first, second, third, and fourth order of polynomials.  
+    - ***Attention***: Phi matrix just contains ten rows, which are corresponding to DIM values, so first row is for ```DIM=4```, second row is for ```DIM=38```, thrid row is for ```DIM=72```, etc.  
+
+        Potential steps:  
+    - renum: Since the tutorial rawdata and rawpedigree data are just numbers, so there is no step of renum. In real dataset, you may need renumber firstly. 
+    - Variance components: To use ```OPTION METHOD VCE``` firstly to get residual variances, and random effects variances.
+
+ ### Step3. Run BLUPF90+   
 - [param_mr09b.txt](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/param_mr09b.txt): This is the parameter file you need in blupf90+. I will summarize important points here. Read this [link](https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html) for more detials. 
 
 ```
@@ -142,8 +153,7 @@ FILE
 -1.101  0.167  2.457
 OPTION solv_method FSPAK
 ```
-- Variances and covariances are provided by textbook. For real dataset, you need to calculate them firstly.
-- [solutions](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/solutions) shows the results. Compare them with textbook page 146. For animal 3, the intercept additive effect (effect 7), first order additive effect (effect 8), and second order additive effect (effect 9) are 0.13110519， -0.02470608, 0.06857404, respectively.
+
 - If you don't want to include perminent effects, delete the following rows in ```para_mr09b.txt```.
 ```
  5  8 cov 1  # Legendre polynomials (intercept) for permanent environmental effect
@@ -161,6 +171,10 @@ FILE
 -0.254  3.171  0.167
 -1.101  0.167  2.457
 ```
+
+### Output files:
+- [solutions](https://github.com/yebigithub/BLUPF90_usage/blob/main/RRM/solutions) shows the results. Compare them with textbook page 146. For animal 3, the intercept additive effect (effect 7), first order additive effect (effect 8), and second order additive effect (effect 9) are 0.13110519， -0.02470608, 0.06857404, respectively.
+
 
 
 # GWAS to get p-val of all the markers.
