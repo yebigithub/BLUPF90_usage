@@ -191,6 +191,10 @@ FILE
 - ```chrmap.txt```:I created this depending on marker information. Attention: remember to add ```SNP_ID```, ```CHR```, ```POS``` in columne names.
 
 ### Main steps
+- Step1. RENUM90 to generate marker.genoclean_XrefID.
+- Step2. BLUPF90+ to generate G inverse matrix.
+- Step3. POSTGSF90 to get p-val for markers.
+
 ### Step1. RENUM90
 - Run ```renumf90 renum.par``` in terminal to generate ```marker.geno.clean_XrefID```. 
 - [renum.par](https://github.com/yebigithub/BLUPF90_usage/blob/main/GWAS/renum.par) is created depending on ```param_mr09b.txt```, remember to add ```SNP_FILE```.
