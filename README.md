@@ -72,7 +72,7 @@ OPTION createGimA22i 0
 - ```solutions``` is what we want. The number information is showing in ```snp6.txt_XrefID```.
 
 
-# Ramdom Regression Model
+# Random Regression Model
 ### Materials:
 Read this tutorial page, summarized very well.  
 https://masuday.github.io/blupf90_tutorial/mrode_c09ex092_random_regression.html
